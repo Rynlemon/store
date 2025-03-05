@@ -2,7 +2,7 @@
     "name": "my-project",
     "version": "1.0.0",
     "description": "A simple static site with multiple pages.",
-    "main": "login.html",
+    "main": "worker.js",
     "scripts": {
       "start": "live-server",
       "build": "echo 'No build step necessary'"
