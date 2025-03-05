@@ -1,5 +1,6 @@
-name = "your-project-name"
-type = "javascript"
-main = "worker.js"
-[env.production]
-# 在此部分可以配置生产环境特定的变量等
+name = "store"  # 确保和 Cloudflare 预期的名字一致
+main = "worker.js"  # 入口文件，确保它存在
+compatibility_date = "2025-03-05"  # 这个字段是必须的
+
+[build]
+command = "npm run build"  # 如果没有构建步骤，可以删除这一行
