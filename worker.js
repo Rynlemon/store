@@ -14,9 +14,9 @@ async function handleRequest(request) {
     } else if (path === '/index') {
         htmlResponse = await fetchHtml('index.html');
     } else if (path === '/navigation') {
-        htmlResponse = await fetchHtml('navigation.html');
+        htmlResponse = await fetchHtml('https://github.com/Rynlemon/store/main/navigation.html');
     } else if (path === '/snake') {
-        htmlResponse = await fetchHtml('snake.html');
+        htmlResponse = await fetchHtml('https://github.com/Rynlemon/store/main/snake.html');
     } else {
         htmlResponse = new Response('Page not found', { status: 404 });
     }
@@ -26,7 +26,7 @@ async function handleRequest(request) {
 
 // 从 GitHub 原始 URL 获取 HTML 文件
 async function fetchHtml(fileName) {
-    const htmlFile = await fetch(`https://raw.githubusercontent.com/Rynlemon/store/main/login.html`);
+    const htmlFile = await fetch(`https://raw.githubusercontent.com/Rynlemon/store/main/f${filename}`);
     if (!htmlFile.ok) {
         return new Response('Failed to fetch file', { status: 404 });
     }
