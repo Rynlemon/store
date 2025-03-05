@@ -1,0 +1,14 @@
+{
+    "name": "my-project",
+    "version": "1.0.0",
+    "description": "A simple static site with multiple pages.",
+    "main": "index.html",
+    "scripts": {
+      "start": "live-server"   
+    },
+    "devDependencies": {
+      "live-server": "^1.2.1"
+    },
+    "dependencies": {}
+  }
+  
