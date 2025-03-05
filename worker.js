@@ -26,7 +26,7 @@ async function handleRequest(request) {
 
 // 从 GitHub 原始 URL 获取 HTML 文件
 async function fetchHtml(fileName) {
-    const htmlFile = await fetch(`https://raw.githubusercontent.com/Rynlemon/store/main/${fileName}`);
+    const htmlFile = await fetch(`https://raw.githubusercontent.com/Rynlemon/store/main/login.html`);
     if (!htmlFile.ok) {
         return new Response('Failed to fetch file', { status: 404 });
     }
