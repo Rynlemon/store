@@ -1,5 +1,5 @@
 name = "your-project-name"
 type = "javascript"
-
+main = "worker.js"
 [env.production]
 # 在此部分可以配置生产环境特定的变量等
