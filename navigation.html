@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>导航界面</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Microsoft YaHei', sans-serif;
+            background: linear-gradient(135deg, #1a2a6c, #b21f1f, #fdbb2d);
+            min-height: 100vh;
+            padding: 20px;
+            overflow-x: hidden;
+        }
+
+        .nav-container {
+            display: grid;
+            grid-template-columns: 4fr 1fr;
+            gap: 20px;
+            max-width: 1600px;
+            margin: 0 auto;
+            padding-bottom: 20px;
+        }
+
+        .welcome-header {
+            grid-column: 1 / 2;
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            padding: 20px;
+            border-radius: 15px;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+            text-align: left;
+            font-size: 24px;
+            color: white;
+            font-weight: 500;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.2);
+        }
+
+        .games-section {
+            grid-column: 1 / 2;
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            padding: 20px;
+            border-radius: 15px;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            gap: 15px;
+        }
+
+        .game-btn {
+            aspect-ratio: 1;
+            border: none;
+            border-radius: 12px;
+            font-size: 16px;
+            max-width: 120px;
+            margin: 0 auto;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            color: white;
+            text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .game-1 { background: linear-gradient(135deg, #43cea2, #185a9d); }
+        .game-2 { background: linear-gradient(135deg, #667eea, #764ba2); }
+        .game-3 { background: linear-gradient(135deg, #ff6b6b, #ee0979); }
+        .game-4 { background: linear-gradient(135deg, #4facfe, #00f2fe); }
+        .game-5 { background: linear-gradient(135deg, #fa709a, #fee140); }
+
+        .leaderboard {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            padding: 15px;
+            border-radius: 15px;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            color: white;
+        }
+
+        .leaderboard h3 {
+            margin-bottom: 10px;
+            font-size: 18px;
+            text-align: center;
+            color: white;
+        }
+
+        .leaderboard table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 14px;
+        }
+
+        .leaderboard th, .leaderboard td {
+            padding: 8px;
+            text-align: center;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .leaderboard th {
+            font-weight: 600;
+            background: rgba(255, 255, 255, 0.1);
+        }
+
+        .game-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        .music-player {
+            grid-column: 2 / 3;
+            grid-row: 1 / span 7;
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            padding: 20px;
+            border-radius: 15px;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+            text-align: center;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            color: white;
+        }
+
+        .music-player h3 {
+            margin-bottom: 15px;
+            font-size: 20px;
+        }
+
+        .player-placeholder {
+            border: 2px dashed rgba(255, 255, 255, 0.2);
+            padding: 20px;
+            border-radius: 12px;
+            color: white;
+            background: rgba(255, 255, 255, 0.1);
+            transition: all 0.3s ease;
+        }
+
+        @media (max-width: 1200px) {
+            .nav-container {
+                grid-template-columns: 1fr;
+            }
+            .games-section {
+                grid-template-columns: repeat(3, 1fr);
+            }
+            .music-player {
+                grid-column: 1;
+                grid-row: auto;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .nav-container {
+                grid-template-columns: 1fr;
+            }
+            .games-section {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            .music-player {
+                grid-column: span 1;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="nav-container">
+        <header class="welcome-header">
+            Hi！Welcome to gamecenter！<span id="username">用户名</span>
+        </header>
+        <section class="games-section">
+            <button class="game-btn game-1" onclick="window.location.href='snake.html'">游戏1</button>
+            <button class="game-btn game-2">游戏2</button>
+            <button class="game-btn game-3">游戏3</button>
+            <button class="game-btn game-4">游戏4</button>
+            <button class="game-btn game-5">游戏5</button>
+        </section>
+        <section class="leaderboard">
+            <h3>游戏1排行榜</h3>
+            <table>
+                <thead>
+                    <tr>
+                        <th>排名</th>
+                        <th>用户名</th>
+                        <th>分数</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr><td>1</td><td>玩家A</td><td>1000</td></tr>
+                    <tr><td>2</td><td>玩家B</td><td>950</td></tr>
+                    <tr><td>3</td><td>玩家C</td><td>900</td></tr>
+                </tbody>
+            </table>
+        </section>
+        <section class="leaderboard">
+            <h3>游戏2排行榜</h3>
+            <table>
+                <thead>
+                    <tr>
+                        <th>排名</th>
+                        <th>用户名</th>
+                        <th>分数</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr><td>1</td><td>玩家D</td><td>880</td></tr>
+                    <tr><td>2</td><td>玩家E</td><td>820</td></tr>
+                    <tr><td>3</td><td>玩家F</td><td>780</td></tr>
+                </tbody>
+            </table>
+        </section>
+        <section class="leaderboard">
+            <h3>游戏3排行榜</h3>
+            <table>
+                <thead>
+                    <tr>
+                        <th>排名</th>
+                        <th>用户名</th>
+                        <th>分数</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr><td>1</td><td>玩家G</td><td>920</td></tr>
+                    <tr><td>2</td><td>玩家H</td><td>850</td></tr>
+                    <tr><td>3</td><td>玩家I</td><td>800</td></tr>
+                </tbody>
+            </table>
+        </section>
+        <section class="leaderboard">
+            <h3>游戏4排行榜</h3>
+            <table>
+                <thead>
+                    <tr>
+                        <th>排名</th>
+                        <th>用户名</th>
+                        <th>分数</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr><td>1</td><td>玩家J</td><td>960</td></tr>
+                    <tr><td>2</td><td>玩家K</td><td>890</td></tr>
+                    <tr><td>3</td><td>玩家L</td><td>840</td></tr>
+                </tbody>
+            </table>
+        </section>
+        <section class="leaderboard">
+            <h3>游戏5排行榜</h3>
+            <table>
+                <thead>
+                    <tr>
+                        <th>排名</th>
+                        <th>用户名</th>
+                        <th>分数</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr><td>1</td><td>玩家M</td><td>930</td></tr>
+                    <tr><td>2</td><td>玩家N</td><td>870</td></tr>
+                    <tr><td>3</td><td>玩家O</td><td>810</td></tr>
+                </tbody>
+            </table>
+        </section>
+        <aside class="music-player">
+            <h3>音乐播放器</h3>
+            <div class="player-placeholder">
+                音乐播放器区域
+            </div>
+        </aside>
+    </div>
+    <script>
+        window.onload = function() {
+            const urlParams = new URLSearchParams(window.location.search);
+            const username = urlParams.get('username');
+            if (username) {
+                document.getElementById('username').textContent = username;
+            }
+        };
+    </script>
+</body>
+</html>
