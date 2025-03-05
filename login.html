@@ -106,42 +106,43 @@
         </div>
     </div>
     
-    <script>
-        // 获取模态框元素
-        const modal = document.getElementById('registerModal');
-        const closeBtn = document.querySelector('.close');
-        const registerBtn = document.querySelector('.register-btn');
-        
-        // 点击注册按钮打开模态框
-        registerBtn.addEventListener('click', function() {
-            modal.style.display = 'block';
-        });
-        
-        // 点击关闭按钮关闭模态框
-        closeBtn.addEventListener('click', function() {
-            modal.style.display = 'none';
-        });
-        
-        // 点击模态框外部关闭模态框
-        window.addEventListener('click', function(event) {
-            if (event.target == modal) {
-                modal.style.display = 'none';
-            }
-        });
-        
-        // 注册表单提交处理
-        document.getElementById('registerForm').addEventListener('submit', function(e) {
-            e.preventDefault();
-            const username = document.getElementById('reg-username').value;
-            const password = document.getElementById('reg-password').value;
-            const email = document.getElementById('reg-email').value;
-            
-            // 这里可以添加注册验证逻辑和数据处理
-            alert(`注册成功！\n用户名: ${username}\n邮箱: ${email}`);
-            
-            // 关闭模态框
-            modal.style.display = 'none';
-        });
-    </script>
+   
 </body>
+<script>
+    // 获取模态框元素
+    const modal = document.getElementById('registerModal');
+    const closeBtn = document.querySelector('.close');
+    const registerBtn = document.querySelector('.register-btn');
+    
+    // 点击注册按钮打开模态框
+    registerBtn.addEventListener('click', function() {
+        modal.style.display = 'block';
+    });
+    
+    // 点击关闭按钮关闭模态框
+    closeBtn.addEventListener('click', function() {
+        modal.style.display = 'none';
+    });
+    
+    // 点击模态框外部关闭模态框
+    window.addEventListener('click', function(event) {
+        if (event.target == modal) {
+            modal.style.display = 'none';
+        }
+    });
+    
+    // 注册表单提交处理
+    document.getElementById('registerForm').addEventListener('submit', function(e) {
+        e.preventDefault();
+        const username = document.getElementById('reg-username').value;
+        const password = document.getElementById('reg-password').value;
+        const email = document.getElementById('reg-email').value;
+        
+        // 这里可以添加注册验证逻辑和数据处理
+        alert(`注册成功！\n用户名: ${username}\n邮箱: ${email}`);
+        
+        // 关闭模态框
+        modal.style.display = 'none';
+    });
+</script>
 </html>

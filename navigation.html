@@ -276,14 +276,14 @@
             </div>
         </aside>
     </div>
-    <script>
-        window.onload = function() {
-            const urlParams = new URLSearchParams(window.location.search);
-            const username = urlParams.get('username');
-            if (username) {
-                document.getElementById('username').textContent = username;
-            }
-        };
-    </script>
 </body>
+<script>
+    window.onload = function() {
+        const urlParams = new URLSearchParams(window.location.search);
+        const username = urlParams.get('username');
+        if (username) {
+            document.getElementById('username').textContent = username;
+        }
+    };
+</script>
 </html>
