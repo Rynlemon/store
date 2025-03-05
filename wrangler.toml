@@ -1,14 +1,5 @@
-{
-  "name": "my-project",
-  "version": "1.0.0",
-  "description": "A simple static site with multiple pages.",
-  "main": "login.html",
-  "scripts": {
-    "start": "live-server",
-    "build": "echo 'No build step necessary'"
-  },
-  "devDependencies": {
-    "live-server": "^1.2.1"
-  },
-  "dependencies": {}
-}
+name = "your-project-name"
+type = "javascript"
+
+[env.production]
+# 在此部分可以配置生产环境特定的变量等

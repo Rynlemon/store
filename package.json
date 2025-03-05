@@ -2,9 +2,10 @@
     "name": "my-project",
     "version": "1.0.0",
     "description": "A simple static site with multiple pages.",
-    "main": "index.html",
+    "main": "login.html",
     "scripts": {
-      "start": "live-server"   
+      "start": "live-server",
+      "build": "echo 'No build step necessary'"
     },
     "devDependencies": {
       "live-server": "^1.2.1"
