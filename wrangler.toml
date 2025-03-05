@@ -1,10 +1,14 @@
-name = "your-project-name"
-type = "javascript"
-
-main = "worker.js"  # 入口文件是 worker.js
-
-[build]
-command = "npm run build"  # 如果有其他构建命令的话
-
-[env.production]
-# 其他配置项（如环境变量等）
+{
+  "name": "my-project",
+  "version": "1.0.0",
+  "description": "A simple static site with multiple pages.",
+  "main": "login.html",
+  "scripts": {
+    "start": "live-server",
+    "build": "echo 'No build step necessary'"
+  },
+  "devDependencies": {
+    "live-server": "^1.2.1"
+  },
+  "dependencies": {}
+}
